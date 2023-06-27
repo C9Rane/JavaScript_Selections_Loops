@@ -2,28 +2,26 @@ console.log("Hello World!\n==========\n");
 
 // Exercise 1 Section
 console.log("EXERCISE 1:\n==========\n");
-for (let x = 0; x <= 100; x++) {
-    if (x%2 != 0) {
-        console.log(x);
+for (let i = 1; i <= 100; i++) {
+    if (i%2 != 0) {
+        console.log(i);
     }
 }
 
 // Exercise 2 Section
 console.log("EXERCISE 2:\n==========\n");
 
-for (let c = 1; c <= 100; c++) {
-    if (c%3 === 0 && c%5 === 0) {
-        console.log("FIZZBUZZ");
-        break;
-    } else if (c%3 === 0) {
-        console.log("FIZZ");
-        break;
-    } else if (c%5 === 0) {
-        console.log("BUZZ");
-        break;
-    } else {
-        console.log(c);
-    }
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        console.log(i, "FIZZBUZZ");
+        
+    } else if (i % 3 === 0) {
+        console.log(i, "FIZZ");
+        
+    } else if (i % 5 === 0) {
+        console.log(i, "BUZZ");
+        
+    } 
 }
 
 // Exercise 3
@@ -34,15 +32,17 @@ do {
     if (a%2 != 0) {
         console.log(a);
         break;
-    } else if (a%3 === 0 && a%5 === 0) {
-        console.log('FIZZBUZZ');
-        break;
+    }
+} while (a <= 100);
+
+a = 1;
+do{
+    if (a%3 === 0 && a%5 === 0) {
+        console.log(a, 'FIZZBUZZ');       
     } else if (a%3 === 0) {
-        console.log('FIZZ');
-        break;
+        console.log(a, 'FIZZ');        
     } else if (a%5 === 0) {
-        console.log('BUZZ');
-        break;
+        console.log(a, 'BUZZ');        
     } else {
         console.log(a);
     }
@@ -55,14 +55,16 @@ let value = Math.round((Math.random() * 500));
 // creates a random number between 0 and 500
 let n = Math.round(Math.random() * (500 - 100) + 100); 
 // creates a random number between 100 and 500
-
+let foundValue = false;
 for (let i = 0; i <= n; i++){
-    if (i = value){
+    if (i === value){
+        foundValue = true;
         console.log("Found value!");
         break;
-    } else {
-        console.log("Did not find value");
-    }
+    } 
+}
+if (!foundValue){
+    console.log("Did not find value");
 }
 
 // Exercise 5
@@ -76,19 +78,18 @@ let start = Math.round(Math.random() * (10 - 1) + 1);
 let end = Math.round(Math.random() * (1000 - 100) + 100); 
 // creates a random number between 100 and 1000
 
-for (let b = start; b <= 100; b++) {
-    if (fizzDivisor === 0 && buzzDivisor === 0) {
-        console.log("FIZZBUZZ");
-        break;
-    } else if (fizzDivisor === 0) {
-        console.log("FIZZ");
-        break;
-    } else if (buzzDivisor === 0) {
-        console.log("BUZZ");
-        break;
-    } else {
-        console.log(b);
-    }
-} while (b <= end);
+
+for (let b = start; b <= end; b++) {
+        if (b % fizzDivisor === 0 && b % buzzDivisor === 0) {
+            console.log(b, "FIZZBUZZ");            
+        } else if (b % fizzDivisor === 0) {
+            console.log(b, "FIZZ");            
+        } else if (b % buzzDivisor === 0) {
+            console.log(b, "BUZZ");            
+        } else {
+            console.log(b);
+        }
+} 
 
 
+console.log(fizzDivisor, buzzDivisor);
